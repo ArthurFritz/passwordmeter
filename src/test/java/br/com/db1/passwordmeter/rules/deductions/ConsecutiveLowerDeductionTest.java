@@ -8,12 +8,12 @@ public class ConsecutiveLowerDeductionTest {
 
     @Test
     public void testValue(){
-        Assert.assertSame(24, consecutiveLowerLettersDeduction.calculate("ABCDEFbasdasdCDFDASbasdasdCDFDAS"));
+        Assert.assertSame(-24, consecutiveLowerLettersDeduction.calculate("ABCDEFbasdasdCDFDASbasdasdCDFDAS"));
     }
 
     @Test
     public void testValueNoSeparator(){
-        Assert.assertSame(10, consecutiveLowerLettersDeduction.calculate("abcdef"));
+        Assert.assertSame(-10, consecutiveLowerLettersDeduction.calculate("abcdef"));
     }
 
     @Test
@@ -23,7 +23,7 @@ public class ConsecutiveLowerDeductionTest {
 
     @Test
     public void testValueManySeparator(){
-        Assert.assertSame(6, consecutiveLowerLettersDeduction.calculate("ABCasDEF@CDFcdDAS@CDFasDAS"));
+        Assert.assertSame(-6, consecutiveLowerLettersDeduction.calculate("ABCasDEF@CDFcdDAS@CDFasDAS"));
     }
 
 }

@@ -8,12 +8,12 @@ public class ConsecutiveUpperDeductionTest {
 
     @Test
     public void testValue(){
-        Assert.assertSame(30, consecutiveUpperLettersDeduction.calculate("ABCDEFbasdasdCDFDASbasdasdCDFDAS"));
+        Assert.assertSame(-30, consecutiveUpperLettersDeduction.calculate("ABCDEFbasdasdCDFDASbasdasdCDFDAS"));
     }
 
     @Test
     public void testValueNoSeparator(){
-        Assert.assertSame(10, consecutiveUpperLettersDeduction.calculate("ABCDEF"));
+        Assert.assertSame(-10, consecutiveUpperLettersDeduction.calculate("ABCDEF"));
     }
 
     @Test
@@ -23,7 +23,7 @@ public class ConsecutiveUpperDeductionTest {
 
     @Test
     public void testValueManySeparator(){
-        Assert.assertSame(24, consecutiveUpperLettersDeduction.calculate("ABCasDEF@CDFcdDAS@CDFasDAS"));
+        Assert.assertSame(-24, consecutiveUpperLettersDeduction.calculate("ABCasDEF@CDFcdDAS@CDFasDAS"));
     }
 
 }

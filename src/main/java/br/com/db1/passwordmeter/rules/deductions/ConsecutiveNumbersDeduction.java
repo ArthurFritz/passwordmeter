@@ -11,7 +11,7 @@ public class ConsecutiveNumbersDeduction implements Meter {
     @Override
     public Integer calculate(String password) {
         Integer rates = countContainsConsecutive(REGEX_CONSECUTIVE_NUMBER, password);
-        return rates * 2;
+        return Math.negateExact(rates * 2);
     }
 }
 

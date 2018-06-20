@@ -8,12 +8,12 @@ public class NumbersOnlyDeductionTest {
 
     @Test
     public void testValueNumbersOne(){
-        Assert.assertSame(1, numbersOnlyDeduction.calculate("1"));
+        Assert.assertSame(-1, numbersOnlyDeduction.calculate("1"));
     }
 
     @Test
     public void testValueNumbersBig(){
-        Assert.assertSame(31, numbersOnlyDeduction.calculate("2094830928340928409802384092834"));
+        Assert.assertSame(-31, numbersOnlyDeduction.calculate("2094830928340928409802384092834"));
     }
 
     @Test

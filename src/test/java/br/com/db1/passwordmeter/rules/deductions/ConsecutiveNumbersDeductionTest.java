@@ -8,12 +8,12 @@ public class ConsecutiveNumbersDeductionTest {
 
     @Test
     public void testValue(){
-        Assert.assertSame(30, consecutiveNumbersDeduction.calculate("123456basdasd654321basdasd654321"));
+        Assert.assertSame(-30, consecutiveNumbersDeduction.calculate("123456basdasd654321basdasd654321"));
     }
 
     @Test
     public void testValueNoSeparator(){
-        Assert.assertSame(10, consecutiveNumbersDeduction.calculate("654321"));
+        Assert.assertSame(-10, consecutiveNumbersDeduction.calculate("654321"));
     }
 
     @Test
@@ -23,7 +23,7 @@ public class ConsecutiveNumbersDeductionTest {
 
     @Test
     public void testValueManySeparator(){
-        Assert.assertSame(6, consecutiveNumbersDeduction.calculate("ABC12DEF@CDF12DAS@CDF14DAS"));
+        Assert.assertSame(-6, consecutiveNumbersDeduction.calculate("ABC12DEF@CDF12DAS@CDF14DAS"));
     }
 
 }

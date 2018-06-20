@@ -25,11 +25,11 @@ public class RegexUtil {
     public static Integer countContainsConsecutive(String regex, String password){
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
-        Integer ocurrences = 1;
+        Integer occurrences = 0;
         while(matcher.find()) {
-            ocurrences++;
+            occurrences++;
         }
         Integer contains = countContains(regex,password);
-        return  contains == 0 ? 0 : contains - ocurrences;
+        return  contains == 0 ? 0 : contains - occurrences;
     }
 }

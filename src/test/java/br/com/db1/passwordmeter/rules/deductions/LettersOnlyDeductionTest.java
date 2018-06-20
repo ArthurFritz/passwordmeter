@@ -8,12 +8,12 @@ public class LettersOnlyDeductionTest {
 
     @Test
     public void testValueLettersOne(){
-        Assert.assertSame(1, lettersOnlyDeduction.calculate("a"));
+        Assert.assertSame(-1, lettersOnlyDeduction.calculate("a"));
     }
 
     @Test
     public void testValueLettersBig(){
-        Assert.assertSame(58, lettersOnlyDeduction.calculate("IUAIubniOABSIOuasiuANHSIUaonsiuOANSIuansiAUOBSBSVUVAvsyuov"));
+        Assert.assertSame(-58, lettersOnlyDeduction.calculate("IUAIubniOABSIOuasiuANHSIUaonsiuOANSIuansiAUOBSBSVUVAvsyuov"));
     }
 
     @Test

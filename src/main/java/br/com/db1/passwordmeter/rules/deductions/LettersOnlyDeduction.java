@@ -9,6 +9,6 @@ public class LettersOnlyDeduction implements Meter {
 
     @Override
     public Integer calculate(String password) {
-        return countNotContains(REGEX_LETTERS, password) > 0 ? 0 : password.length();
+        return countNotContains(REGEX_LETTERS, password) > 0 ? 0 : Math.negateExact(password.length());
     }
 }

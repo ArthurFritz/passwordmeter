@@ -8,16 +8,17 @@ public class SequentialNumbersDeductionTest {
 
     @Test
     public void testValue(){
-        Assert.assertSame(24, sequentialNumbersDeduction.calculate("12345678901234567890132456790"));
+        Assert.assertSame(-24, sequentialNumbersDeduction.calculate("12345678901234567890132456790"));
     }
 
     @Test
     public void testValueSepareted(){
-        Assert.assertSame(21, sequentialNumbersDeduction.calculate("abcde123fghijkl123123mnop123456789qrs654321"));
+        Assert.assertSame(-21, sequentialNumbersDeduction.calculate("abcde123fghijkl123123mnop123456789qrs654321"));
     }
 
     @Test
-    public void testValueSeparetedSymbol(){
-        Assert.assertSame(21, sequentialNumbersDeduction.calculate("abcde@@@654321;.,;.,987654"));
+    public void testValueAllNumbers(){
+        Assert.assertSame(-24, sequentialNumbersDeduction.calculate("0123456789"));
     }
+
 }

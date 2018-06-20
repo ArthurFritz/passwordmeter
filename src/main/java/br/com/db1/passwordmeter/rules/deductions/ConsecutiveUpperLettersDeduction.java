@@ -14,6 +14,6 @@ public class ConsecutiveUpperLettersDeduction implements Meter {
     @Override
     public Integer calculate(String password) {
         Integer rates = countContainsConsecutive(REGEX_CONSECUTIVE_UPPER, password);
-        return rates * 2;
+        return Math.negateExact(rates * 2);
     }
 }
