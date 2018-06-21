@@ -23,6 +23,6 @@ public class SequentialLettersDeductionTest {
 
     @Test
     public void testValueReverted(){
-        Assert.assertSame(-39, sequentialLettersDeduction.calculate("abcdedcba123fghijkl123123mnopqrs"));
+        Assert.assertSame(-36, sequentialLettersDeduction.calculate("abcdexdcba123fghijkl123123mnopqrs"));
     }
 }

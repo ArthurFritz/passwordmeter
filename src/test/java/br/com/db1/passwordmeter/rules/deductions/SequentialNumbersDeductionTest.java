@@ -26,4 +26,10 @@ public class SequentialNumbersDeductionTest {
         Assert.assertSame(-24, sequentialNumbersDeduction.calculate("0123456789"));
     }
 
+    @Test
+    public void testValueSequential(){
+        Assert.assertSame(-3, sequentialNumbersDeduction.calculate("jose0kasd090i0234k"));
+    }
+
+
 }

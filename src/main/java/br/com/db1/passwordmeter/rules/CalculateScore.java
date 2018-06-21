@@ -37,7 +37,12 @@ public class CalculateScore {
     }
 
     public Integer calcBonus(String password){
-        return LIST_METRICS.stream().mapToInt(rule -> rule.calculate(password)).sum();
+        return password == null ? 0 : getScore(password);
+    }
+
+    private Integer getScore(String password){
+        Integer totalScore = LIST_METRICS.stream().mapToInt(rule -> rule.calculate(password)).sum();
+        return  totalScore > 100 ? 100 : (totalScore < 0 ? 0 : totalScore);
     }
 
 }

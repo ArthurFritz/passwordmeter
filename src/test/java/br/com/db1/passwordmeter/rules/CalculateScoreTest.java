@@ -26,6 +26,12 @@ public class CalculateScoreTest {
     @Test
     public void calcBonusRamdomPass3(){
         CalculateScore cs = new CalculateScore();
-        Assert.assertSame(113, cs.calcBonus("jose0kasd090i0234k"));
+        Assert.assertSame(100, cs.calcBonus("jose0kasd090i0234k"));
+    }
+
+    @Test
+    public void calcBonusNull(){
+        CalculateScore cs = new CalculateScore();
+        Assert.assertSame(0, cs.calcBonus(null));
     }
 }

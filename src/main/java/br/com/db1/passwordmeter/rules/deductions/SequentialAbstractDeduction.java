@@ -28,13 +28,14 @@ public abstract class  SequentialAbstractDeduction implements Meter {
                 isNextCharacter(lowerCase);
                 final StringBuilder textValidated = new StringBuilder(lowerCase.substring(position - total, position + 1));
                 Boolean notExistOcurrence = this.validated.stream().filter(item -> item.existInformation(textValidated)).findFirst().map(item -> Boolean.FALSE).orElse(Boolean.TRUE);
-                if(total > 2 && notExistOcurrence){
+                if(total >= 2 && notExistOcurrence){
                     Occurrence item = new Occurrence(textValidated.toString(), total - 1);
                     this.validated.add(item);
                 }
                 total = 0;
             }
         }
+
         Integer result = this.validated.stream().filter(this::validateStartString).mapToInt(itemReference -> itemReference.total).sum();
         result = Math.negateExact(result * 3);
         logResult(log,result);
@@ -50,6 +51,8 @@ public abstract class  SequentialAbstractDeduction implements Meter {
                 total++;
                 position++;
                 this.isNextCharacter(lowerCase);
+            } else {
+                turn = null;
             }
         }
     }
