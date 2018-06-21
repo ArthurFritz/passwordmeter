@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import br.com.db1.passwordmeter.rules.Meter;
+import br.com.db1.passwordmeter.rules.RegexUtil;
 
 public class ConsecutiveUpperLettersDeduction implements Meter {
 
@@ -14,7 +15,8 @@ public class ConsecutiveUpperLettersDeduction implements Meter {
 
     @Override
     public Integer calculate(String password) {
-        Integer rates = countContainsConsecutive(REGEX_CONSECUTIVE_UPPER, password);
+    	String cleanPass = RegexUtil.clearEmpty(password);
+        Integer rates = countContainsConsecutive(REGEX_CONSECUTIVE_UPPER, cleanPass);
         Integer result = Math.negateExact(rates * 2);
         logResult(log,result);
         return result;

@@ -1,6 +1,8 @@
 package br.com.db1.passwordmeter.rules.deductions;
 
 import br.com.db1.passwordmeter.rules.Meter;
+import br.com.db1.passwordmeter.rules.RegexUtil;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -13,7 +15,8 @@ public class ConsecutiveNumbersDeduction implements Meter {
 
     @Override
     public Integer calculate(String password) {
-        Integer rates = countContainsConsecutive(REGEX_CONSECUTIVE_NUMBER, password);
+    	String cleanPass = RegexUtil.clearEmpty(password);
+        Integer rates = countContainsConsecutive(REGEX_CONSECUTIVE_NUMBER, cleanPass);
         Integer result = Math.negateExact(rates * 2);
         logResult(log,result);
         return result;

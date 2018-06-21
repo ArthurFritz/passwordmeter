@@ -34,4 +34,8 @@ public class RegexUtil {
         Integer contains = countContains(regex,password);
         return  contains == 0 ? 0 : contains - occurrences;
     }
+    
+    public static String clearEmpty(String password) {
+    	return password.replaceAll(" ", EMPTY_STRING);
+    }
 }

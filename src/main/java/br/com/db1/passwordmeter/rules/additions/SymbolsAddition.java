@@ -1,6 +1,8 @@
 package br.com.db1.passwordmeter.rules.additions;
 
 import br.com.db1.passwordmeter.rules.Meter;
+import br.com.db1.passwordmeter.rules.RegexUtil;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -13,7 +15,8 @@ public class SymbolsAddition implements Meter {
 
     @Override
     public Integer calculate(String password) {
-        Integer rates = countNotContains(REGEX_LETTERS_NUMBERS, password);
+    	String cleanPass = RegexUtil.clearEmpty(password);
+        Integer rates = countNotContains(REGEX_LETTERS_NUMBERS, cleanPass);
         Integer result = rates * 6;
         logResult(log,result);
         return result;

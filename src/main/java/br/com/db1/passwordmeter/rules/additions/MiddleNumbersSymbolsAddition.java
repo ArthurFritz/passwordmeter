@@ -1,6 +1,8 @@
 package br.com.db1.passwordmeter.rules.additions;
 
 import br.com.db1.passwordmeter.rules.Meter;
+import br.com.db1.passwordmeter.rules.RegexUtil;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -13,8 +15,9 @@ public class MiddleNumbersSymbolsAddition implements Meter {
 
     @Override
     public Integer calculate(String password) {
-        if(password.length() > 2 ) {
-            String middle = password.substring(1, password.length() - 1);
+    	String cleanPass = RegexUtil.clearEmpty(password);
+        if(cleanPass.length() > 2 ) {
+            String middle = cleanPass.substring(1, cleanPass.length() - 1);
             Integer rates = countNotContains(REGEX_LETTERS, middle);
             Integer result = rates * 2;
             logResult(log,result);

@@ -12,6 +12,7 @@ public class UpperLettersAddition extends LettersAddition implements Meter {
 
     @Override
     public Integer calculate(String password) {
+    	
         Integer result = calculate(REGEX_UPPERCASE, password);
         logResult(log,result);
         return result;
