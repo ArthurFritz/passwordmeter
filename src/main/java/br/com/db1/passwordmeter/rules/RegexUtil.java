@@ -8,6 +8,8 @@ public class RegexUtil {
     public static final String REGEX_LOWER = "[a-z]";
     public static final String REGEX_NUMBER = "[0-9]";
     public static final String REGEX_LETTERS_NUMBERS = "[A-z0-9]";
+    public static final String REGEX_LOWER_NUMBERS = "[a-z0-9]";
+    public static final String REGEX_UPPER_NUMBERS = "[A-Z0-9]";
     public static final String REGEX_UPPERCASE = "[A-Z]";
     public static final String REGEX_LETTERS = "[A-z]";
 

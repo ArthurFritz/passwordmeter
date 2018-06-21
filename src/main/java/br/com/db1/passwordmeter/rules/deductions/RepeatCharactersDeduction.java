@@ -1,8 +1,12 @@
 package br.com.db1.passwordmeter.rules.deductions;
 
 import br.com.db1.passwordmeter.rules.Meter;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class RepeatCharactersDeduction implements Meter {
+
+    public static final Log log = LogFactory.getLog(RepeatCharactersDeduction.class);
 
     @Override
     public Integer calculate(String password) {
@@ -24,6 +28,8 @@ public class RepeatCharactersDeduction implements Meter {
                 repeat = unique > 0 ? Math.ceil(repeat/unique) : Math.ceil(repeat);
             }
         }
-        return Math.negateExact(repeat.intValue());
+        Integer result = Math.negateExact(repeat.intValue());
+        logResult(log,result);
+        return result;
     }
 }

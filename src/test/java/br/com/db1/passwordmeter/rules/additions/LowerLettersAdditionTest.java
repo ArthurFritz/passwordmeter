@@ -3,7 +3,7 @@ package br.com.db1.passwordmeter.rules.additions;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UpperLowerAdditionTest {
+public class LowerLettersAdditionTest {
 
     LowerLettersAddition lowerLettersAddition = new LowerLettersAddition();
 

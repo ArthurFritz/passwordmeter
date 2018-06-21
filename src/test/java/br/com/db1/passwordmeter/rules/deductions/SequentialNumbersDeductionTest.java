@@ -12,6 +12,11 @@ public class SequentialNumbersDeductionTest {
     }
 
     @Test
+    public void testValueOnetoFour(){
+        Assert.assertSame(-6, sequentialNumbersDeduction.calculate("1234"));
+    }
+
+    @Test
     public void testValueSepareted(){
         Assert.assertSame(-21, sequentialNumbersDeduction.calculate("abcde123fghijkl123123mnop123456789qrs654321"));
     }

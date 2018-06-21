@@ -9,32 +9,32 @@ public class RequirementsAdditionTest {
 
     @Test
     public void testLength(){
-        Assert.assertSame(2, requirementsAddition.calculate("12345678"));
+        Assert.assertSame(0, requirementsAddition.calculate("12345678"));
     }
 
     @Test
     public void testNumber(){
-        Assert.assertSame(1, requirementsAddition.calculate("4"));
+        Assert.assertSame(0, requirementsAddition.calculate("4"));
     }
 
     @Test
     public void testLower(){
-        Assert.assertSame(1, requirementsAddition.calculate("a"));
+        Assert.assertSame(0, requirementsAddition.calculate("a"));
     }
 
     @Test
     public void testUpper(){
-        Assert.assertSame(1, requirementsAddition.calculate("A"));
+        Assert.assertSame(0, requirementsAddition.calculate("A"));
     }
 
     @Test
     public void testSymbol(){
-        Assert.assertSame(1, requirementsAddition.calculate("@"));
+        Assert.assertSame(0, requirementsAddition.calculate("@"));
     }
 
     @Test
     public void testValueAll(){
-        Assert.assertSame(5, requirementsAddition.calculate("1c3Bb67@9"));
+        Assert.assertSame(10, requirementsAddition.calculate("1c3Bb67@9"));
     }
 
 }

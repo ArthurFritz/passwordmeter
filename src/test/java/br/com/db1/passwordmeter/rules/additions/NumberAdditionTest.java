@@ -15,7 +15,7 @@ public class NumberAdditionTest {
 
     @Test
     public void testValueAll(){
-        Assert.assertSame(60, numberAddition.calculate("a123a654as321a9"));
+        Assert.assertSame(40, numberAddition.calculate("a123a654as321a9"));
     }
 
 }

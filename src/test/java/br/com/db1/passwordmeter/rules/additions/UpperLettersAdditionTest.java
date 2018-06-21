@@ -19,6 +19,11 @@ public class UpperLettersAdditionTest {
     }
 
     @Test
+    public void testAllLower(){
+        Assert.assertSame(0, upperLettersAddition.calculate("dsaojfoiassdfmsaionhdfisadjf"));
+    }
+
+    @Test
     public void testValueUpper(){
         Assert.assertSame(10, upperLettersAddition.calculate("aAOSDIOASJDIJASIOOAJSDIJASDIJLKNVKSJDFGKIcSDFGUOIBDSFGOBNSKDJVCNSFASFÇÇç"));
     }

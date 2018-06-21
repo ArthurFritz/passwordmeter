@@ -1,20 +1,28 @@
 package br.com.db1.passwordmeter.rules.deductions;
 
 import br.com.db1.passwordmeter.rules.Meter;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class  SequentialAbstractDeduction implements Meter {
 
-    private Integer turn = null;
-    private Integer position = 0;
-    private Integer total = 0;
-    private List<Occurrence> validated = new ArrayList<Occurrence>();
+    public final Log log = LogFactory.getLog(this.getClass());
+
+    private Integer turn;
+    private Integer position;
+    private Integer total;
+    private List<Occurrence> validated;
 
     @Override
     public Integer calculate(String password) {
         String lowerCase = password.toLowerCase();
+        turn = null;
+        position = 0;
+        total = 0;
+        validated = new ArrayList<Occurrence>();
         for (; position < lowerCase.length(); position++){
             if(rangeOnly(lowerCase, position)){
                 isNextCharacter(lowerCase);
@@ -28,7 +36,9 @@ public abstract class  SequentialAbstractDeduction implements Meter {
             }
         }
         Integer result = this.validated.stream().filter(this::validateStartString).mapToInt(itemReference -> itemReference.total).sum();
-        return Math.negateExact(result * 3);
+        result = Math.negateExact(result * 3);
+        logResult(log,result);
+        return result;
     }
 
 
