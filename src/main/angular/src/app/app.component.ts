@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PasswordService } from "src/app/password.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  
+  public result:any = {};
+
+  constructor(private _passwordService : PasswordService){
+    
+  }
+
+  verifyPass(password) {
+      this._passwordService.checkPassword(password).subscribe(
+        suc => {this.result = suc},
+        error => {
+          console.log(error);
+          this.result = {};
+        }
+      )
+  }
+
 }
