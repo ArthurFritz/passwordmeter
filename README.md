@@ -1,6 +1,9 @@
 # Password Checker
 
-Projeto disponível no heroku .....
+Projeto disponível no Heroku 
+
+https://fritz-password-meter.herokuapp.com/
+
 
 **Para executar**
 1. gerar o artefato *.jar*:
