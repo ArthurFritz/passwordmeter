@@ -1,7 +1,5 @@
 package br.com.db1.passwordmeter.enumeration;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum LevelScore {
     TOO_SHORT("Too Short"),
     VERY_WEAK("Very Weak"),

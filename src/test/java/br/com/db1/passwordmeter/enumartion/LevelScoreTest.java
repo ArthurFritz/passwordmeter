@@ -1,8 +1,9 @@
 package br.com.db1.passwordmeter.enumartion;
 
-import br.com.db1.passwordmeter.enumeration.LevelScore;
 import org.junit.Assert;
 import org.junit.Test;
+
+import br.com.db1.passwordmeter.enumeration.LevelScore;
 
 public class LevelScoreTest {
 
@@ -71,6 +72,6 @@ public class LevelScoreTest {
     @Test
     public void shouldValidateScoreVeryStrongWithMinLimit() {
         levelScore = LevelScore.byScore(80);
-        Assert.assertEquals(levelScore.VERY_STRONG, levelScore);
+        Assert.assertEquals(LevelScore.VERY_STRONG, levelScore);
     }
 }

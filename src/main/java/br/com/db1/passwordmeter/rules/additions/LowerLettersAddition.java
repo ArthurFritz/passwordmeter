@@ -1,12 +1,11 @@
 package br.com.db1.passwordmeter.rules.additions;
 
-import br.com.db1.passwordmeter.rules.Meter;
+import static br.com.db1.passwordmeter.rules.RegexUtil.REGEX_LOWER;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import static br.com.db1.passwordmeter.rules.RegexUtil.REGEX_LOWER;
-import static br.com.db1.passwordmeter.rules.RegexUtil.REGEX_UPPERCASE;
-import static br.com.db1.passwordmeter.rules.RegexUtil.countContains;
+import br.com.db1.passwordmeter.rules.Meter;
 
 public class LowerLettersAddition extends LettersAddition implements Meter {
 

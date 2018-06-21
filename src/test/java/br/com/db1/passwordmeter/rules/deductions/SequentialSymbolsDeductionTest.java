@@ -10,4 +10,9 @@ public class SequentialSymbolsDeductionTest {
     public void testEmptyValue(){
         Assert.assertSame(0, sequentialSymbolsDeduction.calculate(")()()()()()()()()("));
     }
+    
+    @Test
+    public void testNumbersValue(){
+        Assert.assertSame(0, sequentialSymbolsDeduction.calculate("123456789012345678901234567890"));
+    }
 }

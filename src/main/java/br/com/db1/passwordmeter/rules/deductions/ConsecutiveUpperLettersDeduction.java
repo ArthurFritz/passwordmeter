@@ -1,13 +1,11 @@
 package br.com.db1.passwordmeter.rules.deductions;
 
-import br.com.db1.passwordmeter.rules.Meter;
-import br.com.db1.passwordmeter.rules.RegexUtil;
+import static br.com.db1.passwordmeter.rules.RegexUtil.countContainsConsecutive;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import static br.com.db1.passwordmeter.rules.RegexUtil.countContains;
-import static br.com.db1.passwordmeter.rules.RegexUtil.countContainsConsecutive;
-import static br.com.db1.passwordmeter.rules.RegexUtil.countNotContains;
+import br.com.db1.passwordmeter.rules.Meter;
 
 public class ConsecutiveUpperLettersDeduction implements Meter {
 

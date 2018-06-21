@@ -34,4 +34,10 @@ public class CalculateScoreTest {
         CalculateScore cs = new CalculateScore();
         Assert.assertSame(0, cs.calcBonus(null));
     }
+    
+    @Test
+    public void calcBonusRamdomPass4(){
+        CalculateScore cs = new CalculateScore();
+        Assert.assertSame(50, cs.calcBonus("1234567890123456789001234567890"));
+    }
 }
